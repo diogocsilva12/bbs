@@ -1,0 +1,441 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Proteomics - Assignment",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "crap_ccp.fasta"
+                }
+            ],
+            "label": "crap_ccp.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 332.1062184452447
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "464463da-2c5a-4f8b-8455-a1815e87633d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "database.fasta"
+                }
+            ],
+            "label": "database.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 161.32562487713324,
+                "top": 591.080205875463
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3cb5885f-e587-43ae-b080-5838e6162c33",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "ambient collection"
+                }
+            ],
+            "label": "ambient collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 161.32562487713324,
+                "top": 711.080205875463
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\", \"fields\": null, \"column_definitions\": null}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "46239dd8-f6d5-47fd-b3a6-21c8bb2d714a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/ident_params/4.0.41+galaxy2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Identification Parameters",
+            "outputs": [
+                {
+                    "name": "Identification_Parameters_File",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 161.32562487713324,
+                "top": 831.0802058754629
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/ident_params/4.0.41+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c9b13d4069c8",
+                "name": "peptideshaker",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"advanced_options\": {\"spectrum_annotation_options\": {\"annotation_level\": \"0.75\", \"annotation_mz_tolerance\": \"0.5\", \"annotation_high_resolution\": true}, \"sequence_matching_options\": {\"sequence_matching_type\": \"2\", \"sequence_matching_x\": \"0.25\", \"sequence_matching_enzymatic_tags\": false, \"sequence_matching_max_ptms_per_tag\": \"3\", \"sequence_matching_min_amino_acid_score\": \"30\", \"sequence_matching_min_tag_length\": \"3\"}, \"import_filters_options\": {\"min_peptide_length\": \"8\", \"max_peptide_length\": \"30\", \"max_precursor_error\": \"10.0\", \"max_precursor_error_type\": \"1\", \"missed_cleavages_min\": null, \"missed_cleavages_max\": null, \"exclude_unknown_ptms\": true}, \"ptm_localization_options\": {\"ptm_score\": {\"ptm_score_selector\": \"1\", \"__current_case__\": 0, \"score_neutral_losses\": false, \"ptm_threshold\": \"95.0\"}, \"ptm_sequence_matching_type\": \"1\", \"ptm_alignment\": true}, \"gene_annotation_options\": {\"use_gene_mapping\": false, \"update_gene_mapping\": false}, \"protein_inference_options\": {\"simplify_protein_groups_conditional\": {\"simplify_protein_groups_selector\": \"yes\", \"__current_case__\": 1, \"simplify_protein_groups_evidence\": true, \"simplify_protein_groups_confidence\": true, \"simplify_protein_groups_confidence_threshold\": \"0.05\", \"simplify_protein_groups_enzymaticity\": true, \"simplify_protein_groups_variant\": true}, \"simplify_protein_pi_modifications\": true}, \"validation_levels_options\": {\"protein_fdr\": \"1.0\", \"peptide_fdr\": \"1.0\", \"psm_fdr\": \"1.0\"}, \"fraction_analysis_options\": {\"protein_fraction_mw_confidence\": \"95.0\"}, \"database_processing_options\": {\"decoy_conditional\": {\"create_decoy_selector\": \"yes\", \"__current_case__\": 1, \"decoy_tag\": \"_REVERSED\", \"decoy_type\": \"1\"}, \"decoy_file_tag\": \"_concatenated_target_decoy\"}}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"searchengines_options\": {\"xtandem\": {\"xtandem_advanced\": \"no\", \"__current_case__\": 0}, \"myrimatch\": {\"myrimatch_advanced\": \"no\", \"__current_case__\": 0}, \"msgf\": {\"msgf_advanced\": \"no\", \"__current_case__\": 0}, \"ms_amanda\": {\"ms_amanda_advanced\": \"no\", \"__current_case__\": 0}, \"omssa\": {\"omssa_advanced\": \"no\", \"__current_case__\": 0}, \"comet\": {\"comet_advanced\": \"no\", \"__current_case__\": 0}, \"tide\": {\"tide_advanced\": \"no\", \"__current_case__\": 0}, \"directtag\": {\"directtag_advanced\": \"no\", \"__current_case__\": 0}, \"metamorpheus\": {\"metamorpheus_advanced\": \"no\", \"__current_case__\": 0}, \"novor\": {\"novor_advanced\": \"no\", \"__current_case__\": 0}, \"pepnovo\": {\"pepnovo_advanced\": \"no\", \"__current_case__\": 0}, \"pnovo\": {\"pnovo_advanced\": \"no\", \"__current_case__\": 0}}, \"spectrum_matching_options\": {\"fixed_modifications\": [\"Carbamidomethylation of C\"], \"variable_modifications\": [\"Oxidation of M\"], \"digestion\": {\"cleavage\": \"0\", \"__current_case__\": 0, \"digests\": [{\"__index__\": 0, \"enzyme\": \"Trypsin\", \"missed_cleavages\": \"2\", \"specificity\": \"0\"}]}, \"precursor_ion_tol_units\": \"1\", \"precursor_ion_tol\": \"10.0\", \"fragment_tol_units\": \"0\", \"fragment_tol\": \"0.5\", \"min_charge\": \"2\", \"max_charge\": \"4\", \"forward_ion\": \"b\", \"reverse_ion\": \"y\", \"min_isotope\": \"0\", \"max_isotope\": \"1\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "4.0.41+galaxy2",
+            "type": "tool",
+            "uuid": "18df1767-6b74-49e1-8765-6daa306eb5e6",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "Identification_Parameters_File",
+                    "output_name": "Identification_Parameters_File",
+                    "uuid": "2b75f94a-4c43-4829-bf0d-f130e8fbc62c"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/9.11+galaxy0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "inputs": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "queries_0|inputs2": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 449.7142800951293,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/9.11+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "30b60202d990",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"inputs\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"inputs2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "9.11+galaxy0",
+            "type": "tool",
+            "uuid": "2193af70-f6f3-4058-9e72-fb8fd97b456b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "concatenate_reverse",
+                    "output_name": "out_file1",
+                    "uuid": "1d82ad3d-67b8-4ce4-adf3-53a4c226bd9d"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/9.11+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "inputs": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "queries_0|inputs2": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 542.7940472106172,
+                "top": 311.99266283516323
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/9.11+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "30b60202d990",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"inputs\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"inputs2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "9.11+galaxy0",
+            "type": "tool",
+            "uuid": "28c8f8a4-225e-4642-9b74-15ca34b6a7e5",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "concatenate",
+                    "output_name": "out_file1",
+                    "uuid": "3f615ac8-3ba2-4254-810f-68f5a6c7d8c0"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/fasta_cli/4.0.41+galaxy2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_database": {
+                    "id": 4,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastaCLI",
+            "outputs": [
+                {
+                    "name": "input_database_concatenated_target_decoy",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 798.9497138808529,
+                "top": 180.9703801578238
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/fasta_cli/4.0.41+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c9b13d4069c8",
+                "name": "peptideshaker",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"database_processing_options\": {\"decoy_tag\": \"_REVERSED\", \"decoy_type\": \"2\", \"decoy_file_tag\": \"_concatenated_target_decoy\"}, \"input_database\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "4.0.41+galaxy2",
+            "type": "tool",
+            "uuid": "217201e6-11b3-41a2-befd-87a93c5e78fb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "input_database_concatenated_target_decoy",
+                    "output_name": "input_database_concatenated_target_decoy",
+                    "uuid": "cf6f425e-54a9-48d1-a9ae-26031e40089f"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/search_gui/4.0.41+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_fasta_file": {
+                    "id": 6,
+                    "output_name": "input_database_concatenated_target_decoy"
+                },
+                "input_parameters_file": {
+                    "id": 3,
+                    "output_name": "Identification_Parameters_File"
+                },
+                "peak_lists_files": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Search GUI",
+            "outputs": [
+                {
+                    "name": "searchgui_results",
+                    "type": "searchgui_archive"
+                }
+            ],
+            "position": {
+                "left": 1088.7393637180594,
+                "top": 304.79970043203497
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/search_gui/4.0.41+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c9b13d4069c8",
+                "name": "peptideshaker",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"input_fasta_file\": {\"__class__\": \"ConnectedValue\"}, \"input_parameters_file\": {\"__class__\": \"ConnectedValue\"}, \"peak_lists_files\": {\"__class__\": \"ConnectedValue\"}, \"search_engines_options\": {\"engines\": [\"X!Tandem\", \"MSGF\", \"MyriMatch\"]}, \"searchgui_advanced\": {\"searchgui_advanced_selector\": \"basic\", \"__current_case__\": 0}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "4.0.41+galaxy2",
+            "type": "tool",
+            "uuid": "3911a109-073d-4c63-98dc-8203656d5b1e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "searchgui_results",
+                    "output_name": "searchgui_results",
+                    "uuid": "681da64e-436c-40f8-b49e-38b33ae3276a"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/peptide_shaker/2.0.33+galaxy2",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "searchgui_input": {
+                    "id": 7,
+                    "output_name": "searchgui_results"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Peptide Shaker",
+            "outputs": [
+                {
+                    "name": "mzidentML",
+                    "type": "mzid"
+                },
+                {
+                    "name": "output_certificate",
+                    "type": "txt"
+                },
+                {
+                    "name": "output_proteins",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1343.8600456580766,
+                "top": 304.8369857854853
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/peptideshaker/peptide_shaker/2.0.33+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c9b13d4069c8",
+                "name": "peptideshaker",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"exporting_options\": {\"zip_conditional\": {\"zip_output\": \"separate\", \"__current_case__\": 0, \"export_psdb\": false}, \"mzidentml_conditional\": {\"mzidentml_creation\": \"1\", \"__current_case__\": 0, \"include_sequences\": false, \"contact_options\": {\"contact_options_selector\": \"no\", \"__current_case__\": 0}}, \"followup_conditional\": {\"followup_conditional_selector\": \"no\", \"__current_case__\": 0}, \"output_reports\": [\"9\", \"0\"]}, \"optional_main_parameters\": {\"input_optional_identification_parameters\": null, \"input_fasta_file\": null, \"input_optional_spectrum_files\": null}, \"searchgui_input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "2.0.33+galaxy2",
+            "type": "tool",
+            "uuid": "c44aa24d-41d0-4551-9fcc-4c103b557f65",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_certificate",
+                    "output_name": "output_certificate",
+                    "uuid": "49e846de-3fef-46b0-9292-8c3f2d9abf3c"
+                },
+                {
+                    "label": "output_proteins",
+                    "output_name": "output_proteins",
+                    "uuid": "1130d4ad-b8df-4fac-8e6e-fa75569ec33e"
+                },
+                {
+                    "label": "mzidentML",
+                    "output_name": "mzidentML",
+                    "uuid": "5721c86a-45a8-4f63-a313-711c0fdd6337"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 8,
+                    "output_name": "output_proteins"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1621.506506928375,
+                "top": 306.1052164214933
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"cond\": \"c9=='Syntrophomonas zehnderi OL-4'\", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "4045e962-2b06-451c-8750-176a644e25bb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "end",
+                    "output_name": "out_file1",
+                    "uuid": "67602e76-4004-4414-b2c7-520b5026d1b1"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "3b2980cf-2100-4493-be5c-370ca0257b8e",
+    "version": 4
+}

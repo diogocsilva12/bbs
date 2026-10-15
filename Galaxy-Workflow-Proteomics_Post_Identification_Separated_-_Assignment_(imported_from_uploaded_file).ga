@@ -1,0 +1,605 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Proteomics Post Identification Separated - Assignment (imported from uploaded file)",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Dataset1"
+                }
+            ],
+            "label": "Dataset1",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 63.023438400252324
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "b8424109-9a6a-45fa-8826-8bb0e4aeaced",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Dataset2"
+                }
+            ],
+            "label": "Dataset2",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.7114067945751437,
+                "top": 175.69512804211283
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2633f0a3-ae04-415a-9bcd-db5c300bfee4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 240.84343394396134,
+                "top": 92.77680929629564
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__workflow_invocation_uuid__\": \"489d3656c88111f1ae38bc24110164aa\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"cond\": \"not c3.startswith('cRAP') \", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "3037134a-62ec-4c63-af0b-375eea011e29",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 242.29978604718437,
+                "top": 212.42701367598707
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__workflow_invocation_uuid__\": \"489d3656c88111f1ae38bc24110164aa\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"cond\": \"not c3.startswith('cRAP') \", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "ca826906-1aba-4ab6-a17f-effd0ebc3326",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "tables_0|table": {
+                    "id": 3,
+                    "output_name": "out_file1"
+                },
+                "tables_1|table": {
+                    "id": 2,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Query Tabular",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 555.0513553293182,
+                "top": 90.70568712361168
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
+            "tool_shed_repository": {
+                "changeset_revision": "cf4397560712",
+                "name": "query_tabular",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"__workflow_invocation_uuid__\": \"489d3656c88111f1ae38bc24110164aa\", \"add_to_database\": {\"withdb\": null}, \"addqueries\": {\"queries\": []}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"modify_database\": {\"sql_stmts\": []}, \"query_result\": {\"header\": \"yes\", \"__current_case__\": 0, \"header_prefix\": \"35\"}, \"save_db\": false, \"sqlquery\": \"SELECT ids.acc AS \\\"Main Accession\\\",\\n       s1.rel AS rel_abundance_sample1,\\n       s2.rel AS rel_abundance_sample2\\nFROM (SELECT \\\"Main Accession\\\" AS acc FROM t1\\n      UNION\\n      SELECT \\\"Main Accession\\\" AS acc FROM t2) ids\\nLEFT JOIN (\\n    SELECT \\\"Main Accession\\\" AS acc,\\n           SUM(CAST(\\\"Spectrum Counting\\\" AS REAL)) * 100.0\\n             / SUM(SUM(CAST(\\\"Spectrum Counting\\\" AS REAL))) OVER () AS rel\\n    FROM t1\\n    GROUP BY \\\"Main Accession\\\"\\n) s1 ON ids.acc = s1.acc\\nLEFT JOIN (\\n    SELECT \\\"Main Accession\\\" AS acc,\\n           SUM(CAST(\\\"Spectrum Counting\\\" AS REAL)) * 100.0\\n             / SUM(SUM(CAST(\\\"Spectrum Counting\\\" AS REAL))) OVER () AS rel\\n    FROM t2\\n    GROUP BY \\\"Main Accession\\\"\\n) s2 ON ids.acc = s2.acc\\nORDER BY ids.acc\", \"tables\": [{\"__index__\": 0, \"table\": {\"__class__\": \"ConnectedValue\"}, \"input_opts\": {\"linefilters\": []}, \"tbl_opts\": {\"table_name\": \"\", \"column_names_from_first_line\": true, \"col_names\": \"\", \"load_named_columns\": false, \"pkey_autoincr\": \"\", \"indexes\": []}}, {\"__index__\": 1, \"table\": {\"__class__\": \"ConnectedValue\"}, \"input_opts\": {\"linefilters\": []}, \"tbl_opts\": {\"table_name\": \"\", \"column_names_from_first_line\": true, \"col_names\": \"\", \"load_named_columns\": false, \"pkey_autoincr\": \"\", \"indexes\": []}}], \"workdb\": \"workdb.sqlite\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "3.3.2",
+            "type": "tool",
+            "uuid": "36501d50-d586-45ea-b049-89f949cd645e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Filter Stearate",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 852.8715015614914,
+                "top": 5.285237559715941
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"cond\": \"c2 != None\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "6ab0447e-01c4-4edd-9734-eb4934552f08",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Filter Oleate",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 857.0865454615438,
+                "top": 192.53906353435457
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"cond\": \"c3 != None\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "e2c9f142-4fd2-43e8-b6d3-f28647352cc8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/uniprot_rest_interface/uniprot/0.8",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "infile": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "UniProt",
+            "outputs": [
+                {
+                    "name": "outfile_map",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1146.1610339939668,
+                "top": 15.247168030067137
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/uniprot_rest_interface/uniprot/0.8",
+            "tool_shed_repository": {
+                "changeset_revision": "bf5121c5c2be",
+                "name": "uniprot_rest_interface",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"__workflow_invocation_uuid__\": \"489d3656c88111f1ae38bc24110164aa\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"id_column\": \"1\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"tool\": {\"tool_choice\": \"map\", \"__current_case__\": 0, \"from_cond\": {\"from\": \"UniProtKB_AC-ID\", \"__current_case__\": 0, \"to\": \"UniProtKB\"}, \"fields\": [\"protein_name\", \"organism_name\", \"cc_function\", \"go_p\", \"go_c\", \"go\", \"go_f\", \"go_id\", \"ec\"]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.8",
+            "type": "tool",
+            "uuid": "55918e45-651d-4ae5-be8d-6b054979e593",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/uniprot_rest_interface/uniprot/0.8",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "infile": {
+                    "id": 6,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "UniProt",
+            "outputs": [
+                {
+                    "name": "outfile_map",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1136.381731892785,
+                "top": 190.98333215556076
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/uniprot_rest_interface/uniprot/0.8",
+            "tool_shed_repository": {
+                "changeset_revision": "bf5121c5c2be",
+                "name": "uniprot_rest_interface",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"__workflow_invocation_uuid__\": \"489d3656c88111f1ae38bc24110164aa\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"id_column\": \"1\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"tool\": {\"tool_choice\": \"map\", \"__current_case__\": 0, \"from_cond\": {\"from\": \"UniProtKB_AC-ID\", \"__current_case__\": 0, \"to\": \"UniProtKB\"}, \"fields\": [\"protein_name\", \"organism_name\", \"cc_function\", \"go_p\", \"go_c\", \"go\", \"go_f\", \"go_id\", \"ec\"]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.8",
+            "type": "tool",
+            "uuid": "e4f44cda-4d7b-445d-aa2c-e953351baa91",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "split_parms|input": {
+                    "id": 7,
+                    "output_name": "outfile_map"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Split file",
+                    "name": "split_parms"
+                }
+            ],
+            "label": null,
+            "name": "Split file",
+            "outputs": [
+                {
+                    "name": "list_output_tab",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1446.7053713981113,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "tool_shed_repository": {
+                "changeset_revision": "2dae863c8f42",
+                "name": "split_file_to_collection",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}, \"top\": \"1\", \"split_by\": {\"select_split_by\": \"col\", \"__current_case__\": 0, \"id_col\": \"3\", \"match_regex\": \"^(\\\\w+) (\\\\w+).*\", \"sub_regex\": \"\\\\1_\\\\2\"}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.5.2",
+            "type": "tool",
+            "uuid": "fb90e697-26e0-4b2f-ade6-c84e4dd530a7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "split_parms|input": {
+                    "id": 8,
+                    "output_name": "outfile_map"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Split file",
+                    "name": "split_parms"
+                }
+            ],
+            "label": null,
+            "name": "Split file",
+            "outputs": [
+                {
+                    "name": "list_output_tab",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1458.7681421792486,
+                "top": 268.65282436389515
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "tool_shed_repository": {
+                "changeset_revision": "2dae863c8f42",
+                "name": "split_file_to_collection",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}, \"top\": \"1\", \"split_by\": {\"select_split_by\": \"col\", \"__current_case__\": 0, \"id_col\": \"3\", \"match_regex\": \"^(\\\\w+) (\\\\w+).*\", \"sub_regex\": \"\\\\1_\\\\2\"}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.5.2",
+            "type": "tool",
+            "uuid": "ac12ba35-d209-4c3e-a8e5-5519a400e25d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.11+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "infile": {
+                    "id": 9,
+                    "output_name": "list_output_tab"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1732.6617853580126,
+                "top": 0.6796776551356629
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.11+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "30b60202d990",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"code\": \"1s/^/#/\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"infile|__identifier__\": \"Methanobacterium_formicicum\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "9.11+galaxy0",
+            "type": "tool",
+            "uuid": "0e62fb88-9b29-4855-931e-3554215b962c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.11+galaxy0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "infile": {
+                    "id": 10,
+                    "output_name": "list_output_tab"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1746.5295748408323,
+                "top": 265.2676678179145
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.11+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "30b60202d990",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"code\": \"1s/^/#/\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"infile|__identifier__\": \"Methanobacterium_formicicum\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "9.11+galaxy0",
+            "type": "tool",
+            "uuid": "964317a1-ce9d-4e71-aeb7-42ce7e552816",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/uniprotxml_downloader/uniprotxml_downloader/2.5.0",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input_method|id_file": {
+                    "id": 11,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool UniProt",
+                    "name": "input_method"
+                }
+            ],
+            "label": null,
+            "name": "UniProt",
+            "outputs": [
+                {
+                    "name": "proteome",
+                    "type": "uniprotxml"
+                }
+            ],
+            "position": {
+                "left": 2019.6485341450739,
+                "top": 4.414006572373442
+            },
+            "post_job_actions": {
+                "RenameDatasetActionproteome": {
+                    "action_arguments": {
+                        "newname": "Stearate"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "proteome"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/uniprotxml_downloader/uniprotxml_downloader/2.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "4ddc8da62671",
+                "name": "uniprotxml_downloader",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"format_cond\": {\"format\": \"fasta\", \"__current_case__\": 0}, \"input_method\": {\"input_choice\": \"history\", \"__current_case__\": 2, \"id_file\": {\"__class__\": \"ConnectedValue\"}, \"column\": \"1\", \"field\": \"accession\"}, \"input_method|id_file|__identifier__\": \"Methanobacterium_formicicum\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "2.5.0",
+            "type": "tool",
+            "uuid": "d1d1aef1-15b3-4aa1-b399-8d5ad2c06f75",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/uniprotxml_downloader/uniprotxml_downloader/2.5.0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input_method|id_file": {
+                    "id": 12,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool UniProt",
+                    "name": "input_method"
+                }
+            ],
+            "label": null,
+            "name": "UniProt",
+            "outputs": [
+                {
+                    "name": "proteome",
+                    "type": "uniprotxml"
+                }
+            ],
+            "position": {
+                "left": 2003.8688076983588,
+                "top": 255.867117566098
+            },
+            "post_job_actions": {
+                "RenameDatasetActionproteome": {
+                    "action_arguments": {
+                        "newname": "Oleate"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "proteome"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/uniprotxml_downloader/uniprotxml_downloader/2.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "4ddc8da62671",
+                "name": "uniprotxml_downloader",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"format_cond\": {\"format\": \"fasta\", \"__current_case__\": 0}, \"input_method\": {\"input_choice\": \"history\", \"__current_case__\": 2, \"id_file\": {\"__class__\": \"ConnectedValue\"}, \"column\": \"1\", \"field\": \"accession\"}, \"input_method|id_file|__identifier__\": \"Methanobacterium_formicicum\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "2.5.0",
+            "type": "tool",
+            "uuid": "a65b0be0-0f53-4768-8ca7-ee4ec03c76a7",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "02c593c2-7f83-4776-836a-8fe2afb5767e",
+    "version": 2
+}
